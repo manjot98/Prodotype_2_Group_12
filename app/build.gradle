@@ -17,7 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    // Added for database dependencies
+
     compileOptions {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
@@ -38,7 +38,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
-    // Added for database dependencies
     // Room components
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
     annotationProcessor "androidx.room:room-compiler:$rootProject.roomVersion"
