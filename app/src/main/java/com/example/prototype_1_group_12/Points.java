@@ -31,7 +31,7 @@ public class Points {
     @ColumnInfo(name = "date")
     private Date date;
 
-    public Points(int pointId, double longitude, double latitude, Date date ) {
+    public Points(int routeId, double longitude, double latitude, Date date ) {
         this.routeId = routeId;
         this.longitude = longitude;
         this.latitude = latitude;
