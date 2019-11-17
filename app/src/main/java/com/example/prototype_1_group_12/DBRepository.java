@@ -11,14 +11,14 @@ import java.util.List;
 // Repository allows access to multiple data sources
 // Determines whether to fetch local or network data
 
-public class RoutesRepository {
+public class DBRepository {
 
     private RoutesDAO routesDAO;
     private LiveData<List<Routes>> allRoutes;
 
-    RoutesRepository(Application application){
-        RPDatabase rpDatabase = RPDatabase.getDatabase(application);
-        routesDAO = rpDatabase.routesDAO();
+    DBRepository(Application application){
+        RoomDatabase roomDatabase = RoomDatabase.getDatabase(application);
+        routesDAO = roomDatabase.routesDAO();
         allRoutes = routesDAO.displayRoutes();
     }
 
@@ -30,7 +30,7 @@ public class RoutesRepository {
     // ExecutorService manages terimnation and methods
     // Tracking progress for asynchronous tasks
     void insert(Routes routes){
-        RPDatabase.databaseWriteExecutor.execute(() -> {
+        RoomDatabase.databaseWriteExecutor.execute(() -> {
             routesDAO.insert(routes);
         });
     }
