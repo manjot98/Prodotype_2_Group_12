@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
 public abstract class RPDatabase extends RoomDatabase {
 
     public abstract RoutesDAO routesDAO();
-    public abstract  PointsDAO pointsDAO();
+    public abstract PointsDAO pointsDAO();
 
     // A singleton To prevent having multiple instances of the db
     private static volatile RPDatabase INSTANCE;

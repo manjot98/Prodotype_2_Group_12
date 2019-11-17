@@ -14,10 +14,10 @@ import static androidx.room.ForeignKey.CASCADE;
 //  -Define its relationship to Routes
 //  -ForeignKey allows to specify constraints
 
-@Entity(tableName = "route_table", foreignKeys = @ForeignKey(entity = Points.class, parentColumns = "id", childColumns = "pointid", onDelete = CASCADE))
+@Entity(tableName = "route_table")
 public class Routes {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "route_id")  // Allows specific customization about the column
     private int routeId;
@@ -28,13 +28,16 @@ public class Routes {
     @ColumnInfo(name = "description")
     private String desc;
 
+    @ColumnInfo(name = "rating")
+    private float rating;
+
     @ColumnInfo(name = "date")
     private Date date;
 
-    public Routes(int routeId, String name, String desc, Date date) {
-        this.routeId = routeId;
+    public Routes(String name, String desc,float rating, Date date) {
         this.name = name;
         this.desc = desc;
+        this.rating = rating;
         this.date = date;
     }
 
@@ -68,5 +71,13 @@ public class Routes {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public float getRate() {
+        return rating;
+    }
+
+    public void setRate(float rating) {
+        this.rating = rating;
     }
 }

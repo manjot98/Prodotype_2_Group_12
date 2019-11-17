@@ -10,10 +10,17 @@ import java.util.Date;
 
 import static androidx.room.ForeignKey.CASCADE;
 
-@Entity(tableName = "point_table")
+@Entity(tableName = "point_table", foreignKeys = @ForeignKey(entity = Points.class, parentColumns = "routeId", childColumns = "routeId", onDelete = CASCADE))
 public class Points {
 
-    private int pointId;
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    @ColumnInfo(name = "Id")
+    private int Id;
+
+    @NonNull
+    @ColumnInfo(name = "route_id")
+    private int routeId;
 
     @ColumnInfo(name = "long")
     private double longitude;
@@ -25,40 +32,31 @@ public class Points {
     private Date date;
 
     public Points(int pointId, double longitude, double latitude, Date date ) {
-        this.pointId = pointId;
+        this.routeId = routeId;
         this.longitude = longitude;
         this.latitude = latitude;
         this.date = date;
     }
 
     @NonNull
-    public int getPointId() {
-        return pointId;
-    }
+    public int getPointId() { return Id; }
 
-    public void setPointId(@NonNull int pointId) {
-        this.pointId = pointId;
-    }
+    public void setPointId(@NonNull int Id) { this.Id = Id; }
 
-    public double getLongitude() {
-        return longitude;
-    }
+    @NonNull
+    public int getRouteId() { return routeId; }
 
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
+    public void setRouteId(@NonNull int routeId) { this.routeId = routeId; }
+
+    public double getLongitude() { return longitude; }
+
+    public void setLongitude(double longitude) { this.longitude = longitude; }
 
     public double getLatitude() { return latitude; }
 
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
+    public void setLatitude(double latitude) { this.latitude = latitude; }
 
-    public Date getDate() {
-        return date;
-    }
+    public Date getDate() { return date; }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+    public void setDate(Date date) { this.date = date; }
 }
