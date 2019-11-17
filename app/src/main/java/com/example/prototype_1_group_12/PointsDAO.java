@@ -27,8 +27,8 @@ public interface PointsDAO {
     LiveData<List<Points>> setLongitudeLatitude(int id, double longitude, double latitude);
 
     // For View Routes, show static routes from point A - B
-    @Query("SELECT * FROM point_table WHERE pointId = :id AND long = :longitude AND lat = :latitude")
-    void getPoints(int id, double longitude, double latitude);
+    @Query("SELECT * FROM point_table WHERE route_id = :id ORDER BY  ASC")
+    List<Points> getPoints(int id);
 
     /*
     @Query("SELECT pointId FROM point_table WHERE long = :longitude")

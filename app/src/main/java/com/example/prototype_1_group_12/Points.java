@@ -15,8 +15,8 @@ public class Points {
 
     @PrimaryKey(autoGenerate = true)
     @NonNull
-    @ColumnInfo(name = "Id")
-    private int Id;
+    @ColumnInfo(name = "id")
+    private int id;
 
     @NonNull
     @ColumnInfo(name = "route_id")
@@ -39,9 +39,9 @@ public class Points {
     }
 
     @NonNull
-    public int getPointId() { return Id; }
+    public int getPointId() { return id; }
 
-    public void setPointId(@NonNull int Id) { this.Id = Id; }
+    public void setPointId(@NonNull int id) { this.id = id; }
 
     @NonNull
     public int getRouteId() { return routeId; }
