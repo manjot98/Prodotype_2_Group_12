@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="#6003A9F4"
     tools:context=".AddRouteActivity">
 
     <TextView
@@ -66,30 +66,36 @@
 
     <Button
         android:id="@+id/btnBack2"
-        android:layout_width="100dp"
+        android:layout_width="190dp"
         android:layout_height="52dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="16dp"
         android:background="@android:color/background_dark"
         android:text="Back"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.623"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnSave"
-        android:layout_width="100dp"
+        android:layout_width="190dp"
         android:layout_height="52dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="16dp"
         android:background="@android:color/background_dark"
         android:text="Save"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -155,15 +161,15 @@
     <TextView
         android:id="@+id/textView8"
         android:layout_width="169dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="0dp"
         android:background="#00FAF7F7"
-        android:text="MY POSITION TRACKER"
+        android:fontFamily="sans-serif-black"
+        android:text="My Position Tracker"
         android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintHorizontal_bias="0.247"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+        tools:layout_editor_absoluteY="12dp" />
 
     <EditText
         android:id="@+id/editTxtRouteName"
